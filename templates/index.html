@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mediaTool</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Download</h1>
+        <h1>Media Tool</h1>
         <h2>Any video, png, anything.</h2>
         <p>Paste a link to save the video</p>
-        <form action="/download" method="POST" onsubmit="showLoading()">
+        
+        <form action="/download" method="POST">
             <input type="text" name="url" placeholder="Paste URL here..." required>
             <button type="submit" id="dl-btn">Download Video</button>
         </form>
-        <div id="status">Wait...</div>
+
+        <p id="status" style="display:none; margin-top: 15px; color: #38bdf8;"></p>
     </div>
-    <script>
-        function showLoading() {
-            document.getElementById('status').style.display = 'block';
-            document.getElementById('dl-btn').disabled = true;
-            document.getElementById('dl-btn').innerText = 'Processing...';
-        }
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
