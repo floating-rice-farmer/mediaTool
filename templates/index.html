@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mediaTool</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Download</h1>
+        <h2>Any video, png, anything.</h2>
+        <p>Paste a link to save the video</p>
+        <form action="/download" method="POST" onsubmit="showLoading()">
+            <input type="text" name="url" placeholder="Paste URL here..." required>
+            <button type="submit" id="dl-btn">Download Video</button>
+        </form>
+        <div id="status">Wait...</div>
+    </div>
+    <script>
+        function showLoading() {
+            document.getElementById('status').style.display = 'block';
+            document.getElementById('dl-btn').disabled = true;
+            document.getElementById('dl-btn').innerText = 'Processing...';
+        }
+    </script>
+</body>
+</html>
